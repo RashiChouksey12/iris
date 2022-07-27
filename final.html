@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/final.css">
+  <script src="./assets/script.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>  
+
+  <style>
+        #slider{  
+    width:900px;  
+    height:400px;  
+    margin: 10%;  
+    margin-left:15%;  
+    overflow:hidden;  
+}  
+.slides{  
+    display:block;  
+    width:6000px;  
+    height:400px;  
+    margin-left:0;  
+    padding:0;  
+}  
+.slide{  
+    float:left;  
+    list-style-type:none;  
+    width:900px;  
+    height:400px;  
+}
+  </style>
+ 
+</head>
+
+<body>
+ 
+    <header>
+      <div class="container">
+
+        <nav class="navbar">
+          <!-- LOGO -->
+          <div class="header-logo">
+            <img src="./assets/img/headerlogo.svg" alt="Logo">
+          </div>
+          <!-- NAVIGATION MENU -->
+          <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+              <li>Testimonial</li>
+              <li>Open Position</li>
+              <li>Partner</li>
+              <li>Courses</li>
+              <li>Webinar</li>
+              <li>eNPS Survey</li>
+              <li>Puzzle</li>
+            </div>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+
+  <section class="hero_slider" class="slides"  id="slider">
+    <!-- slider-1 -->
+    <div class="container">
+      <div class="hero_sliderContent">
+        <div class="hero_sliderImg" class="slide">
+          <img src="./assets/img/handsome-confident-smiling-man-with-hands-crossed-chest-removebg-preview 1.png" alt="">
+        </div>
+        <div class="hero_slider-rightContent">
+          <h1>Ready to do your</h1>
+          <h2>Best Work</h2>
+        </div>
+      </div>
+    </div>
+        <!-- slider-2 -->
+
+    <div class="container">
+      <div class="hero_sliderContent">
+        <div class="hero_sliderImg" class="slide">
+          <img src="./assets/img/cheerful-curly-business-girl-wearing-glasses-removebg-preview 3.png" alt="">
+        </div>
+        <div class="hero_slider-rightContent">
+          <h1>The code of the</h1>
+          <h2>Self made</h2>
+        </div>
+        <div>
+          <marquee behavior="scroll" direction="up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quasi porro iure doloribus amet ullam! Dignissimos cumque architecto sequi ipsam, delectus a mollitia reiciendis temporibus modi pariatur harum illum nesciunt perferendis excepturi error ipsa beatae nulla repellendus ab commodi iusto tempore hic aut. Illo amet tempore possimus quisquam quibusdam labore.</marquee>
+        </div>
+      </div>
+    </div>
+        <!-- slider-3 -->
+
+    <div class="container">
+      <div class="hero_sliderContent">
+        <div class="hero_sliderImg" class="slide">
+          <img src="./assets/img/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes-removebg-preview 3.png" alt="">
+        </div>
+        <div class="hero_slider-rightContent">
+          <h1>The code of the</h1>
+          <h2>Self made</h2>
+        </div>
+        <div>
+          <marquee behavior="scroll" direction="up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quasi porro iure doloribus amet ullam! Dignissimos cumque architecto sequi ipsam, delectus a mollitia reiciendis temporibus modi pariatur harum illum nesciunt perferendis excepturi error ipsa beatae nulla repellendus ab commodi iusto tempore hic aut. Illo amet tempore possimus quisquam quibusdam labore.</marquee>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  <script>
+    $(function()
+{  
+//value for animation  
+var width = 900;  
+var animationSpeed = 1000;  
+var pause = 3000;  
+var currentSlide = 1;  
+//Dom element.   
+var $slider = $('#slider');  
+var $sliderAnimation = $slider.find('.slides');  
+var $slides = $sliderAnimation.find('.slide');  
+
+setInterval(function()
+{  
+    $sliderAnimation.animate({'margin-left': '-='+width}, animationSpeed, function(){  
+    currentSlide ++;  
+    if(currentSlide === $slides.length)  
+    {  
+           $sliderAnimation.css('margin-left', 0);  
+           currentSlide = 1;  
+    }  
+});  
+},pause);  
+});
+</script>
+</body>
+
+</html>
